@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demoldify - Your Clean Air Experts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .nav a {
+            color: #2c5f2d;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: #1a3a1b;
+        }
+        
+        .phone-btn {
+            background: #2c5f2d;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background: #2c5f2d;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #1a3a1b;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5f2d;
+            margin-bottom: 3rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-text h2 {
+            color: #2c5f2d;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #2c5f2d;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-white {
+            background: white;
+            color: #2c5f2d;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #f9f9f9;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card h4 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card .stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #666;
+            margin-top: 1rem;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-card h3 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: #f9f9f9;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: #2c5f2d;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            text-align: left;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a3a1b;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer a {
+            color: #90ee90;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav a {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://demoldify.com/wp-content/uploads/2025/08/demoldifylogo450.jpg" alt="Demoldify Logo">
+            </div>
+            <nav class="nav">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:2699677054" class="phone-btn">(269) 967-7054</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Clean Air Experts</h1>
+        <h2>We Find It. We Fix It. You Breathe Easy.</h2>
+        <p>No More Mold. No More Odor.</p>
+        <a href="tel:2699677054" class="cta-btn">Call Now (269) 967-7054</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">How Can We Help You?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                At Demoldify, we specialize in mold and odor remediation that restores the comfort, safety, and air quality of your home or business. From thorough inspections to professionally-handled treatment, we eliminate hidden threats so you can breathe easy and live healthier.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Mold Inspection</h3>
+                    <p>Thorough inspections to identify hidden mold problems in your home or business.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Mold Remediation</h3>
+                    <p>Professional treatment and removal of mold to restore your indoor air quality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Odor Removal</h3>
+                    <p>Eliminate stubborn odors from vehicles, homes, and commercial spaces.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Air Quality Testing</h3>
+                    <p>Comprehensive testing to ensure your indoor environment is safe and healthy.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Moisture Control</h3>
+                    <p>Identify and address moisture issues that lead to mold growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Post-Remediation Verification</h3>
+                    <p>Confirm that mold has been successfully removed and your space is safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Healthy Homes Start with Us</h2>
+                <p><strong>About us</strong></p>
+                <p>Demoldify is a family-owned mold and odor treatment company proudly rooted in Battle Creek, Michigan. Founded by certified home inspector Josh Conrad and run alongside his wife Jennylyn, Demoldify was born from a desire to do more than just identify problems—we provide real, lasting solutions.</p>
+                <p>Backed by advanced training and a commitment to hands-on care, we deliver honest service, effective treatments, and peace of mind to every home we touch.</p>
+                <a href="#contact" class="cta-btn" style="margin-top: 1rem;">Meet Your Specialist</a>
+            </div>
+            <div class="about-image">
+                <img src="https://demoldify.com/wp-content/uploads/2025/07/Josh-Conrad.jpg" alt="Josh Conrad - Demoldify Founder">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Don't let it get worse,</h2>
+        <h2>Call Us Today!</h2>
+        <p>Smell Something? We'll Handle It</p>
+        <a href="tel:2699677054" class="cta-white">Call (269) 967-7054</a>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Testimonials</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <h4>Excellent Service</h4>
+                    <div class="stars">★★★★★</div>
+                    <p>"Josh was incredibly thorough and professional. He found mold we didn't even know existed and took care of it completely. Our home smells fresh and clean now!"</p>
+                    <p class="author">- David Wilcox</p>
+                </div>
+                <div class="testimonial-card">
+                    <h4>Professional Service</h4>
+                    <div class="stars">★★★★★</div>
+                    <p>"The team at Demoldify went above and beyond. They explained everything clearly, treated our home with care, and the results were amazing. Highly recommend!"</p>
+                    <p class="author">- Esther Davidson</p>
+                </div>
+                <div class="testimonial-card">
+                    <h4>Car Odor Gone!</h4>
+                    <div class="stars">★★★★★</div>
+                    <p>"We can help remove that nasty smell from your car. They eliminated a smell in my car that I thought would never go away. Incredible service!"</p>
+                    <p class="author">- Michael Johnson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">From The Blog</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">News</p>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://demoldify.com/wp-content/uploads/2025/11/AdobeStock_417348927-scaled.jpeg" alt="Mold in home">
+                    <div class="blog-card-content">
+                        <h3>The Hidden Life of Mold: Where It Thrives and Why Homeowners Miss It</h3>
+                        <p>Most people think mold only grows in obvious places, but the truth is far more concerning...</p>
+                        <a href="#" style="color: #2c5f2d; text-decoration: none; font-weight: 600;">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://demoldify.com/wp-content/uploads/2025/08/Mold-growth-on-damaged-bathroom-tiles-showcasing-deterioration.jpeg" alt="Mold test">
+                    <div class="blog-card-content">
+                        <h3>The Truth About Petri Dish Mold Tests: Why They're a Waste of Money</h3>
+                        <p>When homeowners suspect mold, many turn to DIY petri dish tests. But are they reliable?</p>
+                        <a href="#" style="color: #2c5f2d; text-decoration: none; font-weight: 600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Let's Get Connected</h2>
+            <p>Get in touch to make your home healthy and clean again.</p>
+            <p><strong>Let's talk</strong></p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Demoldify. All rights reserved.</p>
+        <p>Battle Creek, Michigan</p>
+        <p>Call us: <a href="tel:2699677054">(269) 967-7054</a></p>
+    </footer>
+</body>
+</html>
