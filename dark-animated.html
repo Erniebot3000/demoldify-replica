@@ -918,4 +918,79 @@
                     <div class="author-avatar">MJ</div>
                     <div class="author-info">
                         <h4>Michael Johnson</h4>
-                        <p>Battle Creek, MI</p
+                        <p>Battle Creek, MI                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header animate-on-scroll">
+            <div class="section-tag">Get In Touch</div>
+            <h2 class="section-title">Let's Get Connected</h2>
+            <p class="section-subtitle">Contact us to make your home healthy and clean again.</p>
+        </div>
+        <div class="contact-form animate-on-scroll">
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(269) 555-0123">
+                </div>
+                <div class="form-group">
+                    <label for="message">How Can We Help?</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your mold or odor concerns..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Demoldify. All rights reserved.</p>
+        <p>Battle Creek, Michigan</p>
+        <p>Call us: <a href="tel:2699677054">(269) 967-7054</a></p>
+    </footer>
+
+    <!-- JavaScript for Particles and Animations -->
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
